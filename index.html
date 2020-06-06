@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home</title>
+
+    <style>
+        li.collapsible {
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    <h2>Home</h2>
+
+    <ul>
+        <li><a href='pdfs.html'>pdfs.html</a></li><li><a href='domains.html'>domains.html</a></li>
+    </ul>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script>
+        $('.collapsible').each(function () {
+            var el = $(this);
+            var collapser = $('<span>').text('+');
+            el.prepend(collapser);
+            collapser.click(function () {
+                el.children('ul').toggle();
+                collapser.text(collapser.text() == '+' ? '-' : '+');
+            })
+            el.find('ul').hide();
+            console.log(el.children('ul'));
+        });
+    </script>
+</body>
+</html>
